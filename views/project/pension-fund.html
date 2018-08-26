@@ -1,0 +1,67 @@
+{{ template "common/layout.html" . }}
+
+{{ define "body" }}
+    <div class="container">
+
+        {{ template "data/project-breadcrumb.html" . }}
+
+        <div class="row mt-3">
+
+            <div class="col-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#description" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.description"}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#data" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.data"}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#code-tasks" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.code-tasks"}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#common-tasks" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.common-tasks"}}</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3 mb-3">
+                    <div role="tabpanel" class="tab-pane fade show active" id="description">
+                        <div class="row">
+                            <div class="col-12">
+                                {{ template "data/alert.html" i18n .Lang "project.alert.not-implemented" }}
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>{{i18n .Lang "project.pension-fund.challenge.header"}}</h5>
+                                        <p>{{i18n .Lang "project.pension-fund.challenge.p1"}}</p>
+                                    </div>
+                                    <div class="col-12">
+                                        <h5>{{i18n .Lang "project.pension-fund.proposal.header"}}</h5>
+                                        <p>{{i18n .Lang "project.pension-fund.proposal.p1"}}</p>
+                                        <ul>
+                                            <li>{{i18n .Lang "project.pension-fund.proposal.p1.i1"}}</li>
+                                            <li>{{i18n .Lang "project.pension-fund.proposal.p1.i2"}}</li>
+                                            <li>{{i18n .Lang "project.pension-fund.proposal.p1.i3"}}</li>
+                                            <li>{{i18n .Lang "project.pension-fund.proposal.p1.i4"}} <span class="badge badge-success">{{i18n .Lang "project.pension-fund.proposal.p1.i4.badge"}}</span></li>
+                                        </ul>
+                                        <p>{{i18n .Lang "project.pension-fund.proposal.p2"}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="data">
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="code-tasks">
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="common-tasks">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{{ end }}

@@ -1,0 +1,115 @@
+{{ template "common/layout.html" . }}
+
+{{ define "body" }}
+    <div class="container">
+
+        {{ template "data/project-breadcrumb.html" . }}
+
+        <div class="row mt-3">
+
+            <div class="col-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#description" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.description"}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#data" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.data"}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#code-tasks" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.code-tasks"}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#common-tasks" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.common-tasks"}}</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3 mb-3">
+                    <div role="tabpanel" class="tab-pane fade show active" id="description">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5>{{i18n .Lang "project.housing-cooperative.challenge.header"}}</h5>
+                                <p>{{i18n .Lang "project.housing-cooperative.challenge.p1"}}</p>
+                            </div>
+                            <div class="col-12">
+                                <h5>{{i18n .Lang "project.housing-cooperative.proposal.header"}}</h5>
+                                <p>{{i18n .Lang "project.housing-cooperative.proposal.p1"}}</p>
+                            </div>
+                            <div class="col-12">
+                                <h5>{{i18n .Lang "project.housing-cooperative.goal.header"}}</h5>
+                                <p>{{i18n .Lang "project.housing-cooperative.goal.p1"}}</p>
+                            </div>
+                            <div class="col-12">
+                                <h5>{{i18n .Lang "project.housing-cooperative.rules.header"}}</h5>
+                                <p>{{i18n .Lang "project.housing-cooperative.rules.p1"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.rules.p2"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.rules.p3"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.rules.p4"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.rules.p5"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.rules.p6"}}</p>
+                            </div>
+                            <div class="col-12">
+                                <h5>{{i18n .Lang "project.housing-cooperative.overpayments.header"}}</h5>
+                                <ol>
+                                    <li>{{i18n .Lang "project.housing-cooperative.overpayments.i1"}}</li>
+                                    <li>{{i18n .Lang "project.housing-cooperative.overpayments.i2"}}</li>
+                                    <li>{{i18n .Lang "project.housing-cooperative.overpayments.i3"}}</li>
+                                </ol>
+                            </div>
+                            <div class="col-12">
+                                <h5>{{i18n .Lang "project.housing-cooperative.participants.header"}}</h5>
+                                <ol>
+                                    <li>{{i18n .Lang "project.housing-cooperative.participants.i1"}}</li>
+                                    <li>{{i18n .Lang "project.housing-cooperative.participants.i2"}}</li>
+                                    <li>{{i18n .Lang "project.housing-cooperative.participants.i3"}}</li>
+                                </ol>
+                            </div>
+                            <div class="col-12">
+                                <h5>{{i18n .Lang "project.housing-cooperative.withdraw-funds.header"}}</h5>
+                                <p>{{i18n .Lang "project.housing-cooperative.withdraw-funds.p1"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.withdraw-funds.p2"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.withdraw-funds.p3"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.withdraw-funds.p4"}}</p>
+                            </div>
+                            <div class="col-12">
+                                <h5>{{i18n .Lang "project.housing-cooperative.defaulter.header"}}</h5>
+                                <p>{{i18n .Lang "project.housing-cooperative.defaulter.p1"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.defaulter.p2"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.defaulter.p3"}}</p>
+                            </div>
+                            <div class="col-12">
+                                <h5>{{i18n .Lang "project.housing-cooperative.about-us.header"}}</h5>
+                                <p>{{i18n .Lang "project.housing-cooperative.about-us.p1"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.about-us.p2"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.about-us.p3"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.about-us.p4"}}</p>
+                                <p>{{i18n .Lang "project.housing-cooperative.about-us.p5"}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="data">
+                        {{ template "data/alert.html" i18n .Lang "under-construction" }}
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="code-tasks">
+                        <ul>
+                            <li>Доработать прототип кооператива.</li>
+                            <li>Добавить механизм голосования.</li>
+                            <li>Добавить интеграцию с платежными системами.</li>
+                        </ul>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="common-tasks">
+                        <ul>
+                            <li>Добавить перевод пользовательского интерфейса на другие языки.</li>
+                            <li>Проработать проект на соотвествие законов РФ: регистрация кооператива, устав, открытие счетов, налоговая.</li>
+                            <li>Проработать проект на соотвествие законов РК: регистрация кооператива, устав, открытие счетов, налоговая.</li>
+                            <li>Найти людей, которые согласились бы взяться за реализацию проекта на территории: Белоруссии, Грузии, Украины и т.д.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{{ end }}

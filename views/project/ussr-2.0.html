@@ -1,0 +1,117 @@
+{{ template "common/layout.html" . }}
+
+{{ define "body" }}
+    <div class="container">
+
+        {{ template "data/project-breadcrumb.html" . }}
+
+        <div class="row mt-3">
+
+            <div class="col-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#description" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.description"}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#data" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.data"}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#code-tasks" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.code-tasks"}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#common-tasks" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.common-tasks"}}</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3 mb-3">
+                    <div role="tabpanel" class="tab-pane fade show active" id="description">
+                        <div class="row">
+                            <div class="col-12">
+                                {{ template "data/alert.html" i18n .Lang "project.alert.not-implemented" }}
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h5>{{i18n .Lang "project.ussr-2.0.challenge.header"}}</h5>
+                                        <p>{{i18n .Lang "project.ussr-2.0.challenge.p1"}}</p>
+                                    </div>
+                                    <div class="col-12 mt-3">
+                                        <h5>{{i18n .Lang "project.ussr-2.0.proposal.header"}}</h5>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-12">
+                                                <p>{{i18n .Lang "project.ussr-2.0.proposal.p1"}}</p>
+                                                <p>{{i18n .Lang "project.ussr-2.0.proposal.p2"}}</p>
+                                                <p>{{i18n .Lang "project.ussr-2.0.proposal.p3"}}</p>
+                                                <p>{{i18n .Lang "project.ussr-2.0.proposal.p4"}}</p>
+                                            </div>
+                                            <div class="col-lg-8 col-12">
+                                                <div class="embed-responsive embed-responsive-4by3">
+                                                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XRlv-_uRhbY?rel=0" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <h5>{{i18n .Lang "project.ussr-2.0.money.header"}}</h5>
+                                        <p>{{i18n .Lang "project.ussr-2.0.money.p1"}}</p>
+                                        <p>{{i18n .Lang "project.ussr-2.0.money.p2"}}</p>
+                                        <p>{{i18n .Lang "project.ussr-2.0.money.p3"}}</p>
+                                    </div>
+                                    <div class="col-12">
+                                        <h5>{{i18n .Lang "project.ussr-2.0.goal.header"}}</h5>
+                                        <p>{{i18n .Lang "project.ussr-2.0.goal.p1"}}</p>
+                                        <div class="row">
+                                            <div class="col-12 col-lg-9">
+                                                <p>{{i18n .Lang "project.ussr-2.0.goal.p2"}}</p>
+                                                <p>{{i18n .Lang "project.ussr-2.0.goal.p3"}}</p>
+                                                <p>{{i18n .Lang "project.ussr-2.0.goal.p4"}}</p>
+                                                <p>{{i18n .Lang "project.ussr-2.0.goal.p5"}}</p>
+                                            </div>
+                                            <div class="col-12 col-lg-3">
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">1. <span class="flag-icon flag-icon-cn"></span> Китай 23.159 млрд. $</li>
+                                                    <li class="list-group-item">2. <span class="flag-icon flag-icon-us"></span> США 19.391 млрд. $</li>
+                                                    <li class="list-group-item">...</li>
+                                                    <li class="list-group-item">6. <span class="flag-icon flag-icon-ru"></span> Россия 4.008 млрд. $</li>
+                                                    <li class="list-group-item">...</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <h5>{{i18n .Lang "project.ussr-2.0.rules.header"}}</h5>
+                                        <p>{{i18n .Lang "project.ussr-2.0.rules.p1"}}</p>
+                                        <ul>
+                                            <li>{{i18n .Lang "project.ussr-2.0.rules.p1.i1"}}</li>
+                                            <li>{{i18n .Lang "project.ussr-2.0.rules.p1.i2"}}</li>
+                                            <li>{{i18n .Lang "project.ussr-2.0.rules.p1.i3"}}</li>
+                                            <li>{{i18n .Lang "project.ussr-2.0.rules.p1.i4"}}</li>
+                                            <li>{{i18n .Lang "project.ussr-2.0.rules.p1.i5"}}</li>
+                                            <li>{{i18n .Lang "project.ussr-2.0.rules.p1.i6"}}</li>
+                                            <li>{{i18n .Lang "project.ussr-2.0.rules.p1.i7"}} <span class="badge badge-success">{{i18n .Lang "project.ussr-2.0.rules.p1.i7.badge"}}</span></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-12">
+                                        <h5>{{i18n .Lang "project.ussr-2.0.management.header"}}</h5>
+                                        <p>{{i18n .Lang "project.ussr-2.0.management.p1"}}</p>
+                                        <p>{{i18n .Lang "project.ussr-2.0.management.p2"}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="data">
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="code-tasks">
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="common-tasks">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{{ end }}

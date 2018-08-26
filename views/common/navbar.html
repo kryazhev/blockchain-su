@@ -1,0 +1,84 @@
+<!-- Lang Modal -->
+<div class="modal fade" id="langModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Помощь с переводом</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>На данный момент пользовательский интерфейс поддерживается только на языках: <span class="flag-icon flag-icon-ru"></span> ru.</p>
+                <p>Если вы можете помочь с переводом на другие языки, то файл для перевода вы можете скачать <a href="/static/i18n/locale_ru.ini" target="_blank">здесь</a>.</p>
+                <p>После перевода отправьте файл по адресу blockchain.ussr@gmail.com</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{i18n .Lang "action.close"}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-secondary">
+    <div class="container">
+        <a class="navbar-brand" href="/home.html"><span class="fa fa-home fa-lg"></span> {{i18n .Lang "navigation.home"}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarProjects" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="fa fa-project-diagram fa-lg"></span> {{i18n .Lang "navigation.projects"}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarProjects">
+                        <a class="dropdown-item" href="/project/housing-cooperative.html"><span class="fa fa-file-contract fa-lg"></span> {{i18n .Lang "project.housing-cooperative"}}</a>
+                        <a class="dropdown-item" href="/project/ussr-2.0.html"><span class="fa fa-dove fa-lg"></span> {{i18n .Lang "project.ussr-2.0"}}</a>
+                        <a class="dropdown-item" href="/project/pension-fund.html"><span class="fa fa-blind fa-lg"></span> {{i18n .Lang "project.pension-fund"}}</a>
+                        <a class="dropdown-item" href="/project/municipal-services.html"><span class="fa fa-clipboard-list fa-lg"></span> {{i18n .Lang "project.municipal-services"}}</a>
+                        <a class="dropdown-item" href="/project/bank.html"><span class="fa fa-piggy-bank fa-lg"></span> {{i18n .Lang "project.bank"}}</a>
+                    </div>
+                </li>
+                <li class="nav-item{{if eq .Page "about-us"}} active{{end}}">
+                    <a class="nav-link" href="/about-us.html"><span class="fa fa-address-card fa-lg"></span> {{i18n .Lang "navigation.about-us"}}</a>
+                </li>
+                <li class="nav-item{{if eq .Page "contact-us"}} active{{end}}">
+                    <a class="nav-link" href="/contact-us.html"><span class="fa fa-hand-holding-usd fa-lg"></span> {{i18n .Lang "navigation.contact-us"}}</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarLanguages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="flag-icon flag-icon-{{.Lang}}"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarLanguages">
+                        <a class="dropdown-item" href="/action/change-language?lang=ru"><span class="flag-icon flag-icon-ru"></span> Pусский язык</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-kz"></span> Қазақ тілі</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-by"></span> Беларускую мову</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-ge"></span> ქართული ენა</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-ua"></span> Українська мова</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-kg"></span> Кыргыз</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-tj"></span> Забони тоҷикӣ</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-uz"></span> O'zbek</a>
+{{/*
+                        <a class="dropdown-item" href="/action/change-language?lang=by"><span class="flag-icon flag-icon-by"></span> беларускую мову</a>
+                        <a class="dropdown-item" href="/action/change-language?lang=ge"><span class="flag-icon flag-icon-ge"></span> ქართული ენა</a>
+                        <a class="dropdown-item" href="/action/change-language?lang=ua"><span class="flag-icon flag-icon-ua"></span> українська мова</a>
+*/}}
+                        <a class="dropdown-item" href="/action/change-language?lang=gb"><span class="flag-icon flag-icon-gb"></span> English</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#"><span class="fa fa-sign-in-alt fa-lg"></span> {{i18n .Lang "action.login"}}</a>
+                </li>
+{{/*
+                <li class="nav-item">
+                    <a class="nav-link" href="/action/request" target="_blank">Request</a>
+                </li>
+*/}}
+            </ul>
+        </div>
+    </div>
+</nav>

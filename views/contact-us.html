@@ -1,0 +1,136 @@
+{{ template "common/layout.html" . }}
+
+{{ define "head" }}
+    <script>
+        $(function () {
+            $("#feedbackButton").click(function () {
+                $("#feedbackButton").addClass("disabled");
+
+                $("#feedbackSuccess").removeClass("d-block").addClass("d-none");
+                $("#feedbackFail").removeClass("d-block").addClass("d-none");
+
+                $.post("/action/feedback", $("#feedbackForm").serialize()).done(function(data) {
+                    console.log(data);
+                    $("#feedbackButton").removeClass("disabled");
+                    if (data.success) {
+                        $("#feedbackSuccess").removeClass("d-none").addClass("d-block");
+                    } else {
+                        $("#feedbackFail").removeClass("d-none").addClass("d-block");
+                    }
+                });
+            });
+        });
+    </script>
+{{ end }}
+
+{{ define "body" }}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12 mt-3">
+                <h5 id="donate">{{i18n .Lang "contact-us.donate.header"}}</h5>
+                <p>{{i18n .Lang "contact-us.donate.p1"}}</p>
+
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#sberbank" role="tab" data-toggle="tab">
+                            <img src="/static/img/logo/sber.ico" width="24" height="24"/> Сбербанк
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#alphabank" role="tab" data-toggle="tab">
+                            <img src="/static/img/logo/alpha.png" width="24" height="24"/> Альфа-Банк
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#web-money" role="tab" data-toggle="tab">
+                            <img src="/static/img/logo/web-money.ico" width="24" height="24"/> WebMoney
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bitcoin" role="tab" data-toggle="tab">
+                            <img src="/static/img/logo/bitcoin.png" width="24" height="24"/> Bitcoin
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bitcoin-cash" role="tab" data-toggle="tab">
+                            <img src="/static/img/logo/bitcoin-cash.png" width="24" height="24"/> BitcoinCash
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3 mb-3">
+                    <div role="tabpanel" class="tab-pane fade show active" id="sberbank">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{i18n .Lang "contact-us.donate.sberbank"}} - TODO</li>
+                        </ul>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="alphabank">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{i18n .Lang "contact-us.donate.alphabank"}} - TODO</li>
+                        </ul>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="web-money">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{i18n .Lang "contact-us.donate.web-money.wmr"}} - TODO</li>
+                            <li class="list-group-item">{{i18n .Lang "contact-us.donate.web-money.wmz"}} - TODO</li>
+                            <li class="list-group-item">{{i18n .Lang "contact-us.donate.web-money.wmx"}} - TODO</li>
+                            <li class="list-group-item">{{i18n .Lang "contact-us.donate.web-money.wmh"}} - TODO</li>
+                        </ul>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="bitcoin">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{i18n .Lang "contact-us.donate.bitcoin"}} - TODO</li>
+                        </ul>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="bitcoin-cash">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{i18n .Lang "contact-us.donate.bitcoin-cash"}} - TODO</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                {{ template "data/alert.html" i18n .Lang "contact-us.donate.alert" }}
+            </div>
+
+            <div class="col-12 mt-3">
+                <h5 id="feedback">{{i18n .Lang "contact-us.feedback.header"}}</h5>
+                <p>{{i18n .Lang "contact-us.feedback.p1"}}</p>
+
+                <form id="feedbackForm" action="/action/feedback" method="post" class="border border-secondary rounded p-3">
+                    <div class="row form-group">
+                        <label for="email" class="col-md-2 col-form-label">{{i18n .Lang "contact-us.feedback.form.email"}}</label>
+                        <div class="col-md-10"><input id="email" name="email" type="email" class="form-control" placeholder="name@mail.ru"/></div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="message" class="col-md-2 col-form-label">{{i18n .Lang "contact-us.feedback.form.message"}}</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="message" name="message" rows="7"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-md-2 col-md-10">
+                            <button id="feedbackButton" type="button" class="btn btn-primary">{{i18n .Lang "action.send"}}</button>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <div id="feedbackSuccess" class="alert alert-success d-none" role="alert">{{i18n .Lang "contact-us.feedback.action-result.success"}}</div>
+                            <div id="feedbackFail" class="alert alert-danger d-none" role="alert">{{i18n .Lang "contact-us.feedback.action-result.fail"}}</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-12 mt-3">
+                {{ template "data/alert.html" i18n .Lang "contact-us.feedback.alert" }}
+            </div>
+        </div>
+    </div>
+{{ end }}

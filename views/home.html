@@ -1,0 +1,148 @@
+{{ template "common/layout.html" . }}
+
+{{ define "body" }}
+    <div class="container">
+        <header class="jumbotron">
+            <div class="row">
+                <div class="col-12">
+                    <h1>{{i18n .Lang "home.jumbotron.header"}}</h1>
+                    <p>{{i18n .Lang "home.jumbotron.p1"}}</p>
+                </div>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-12">
+                <h3>{{i18n .Lang "home.motivation.header"}}</h3>
+                <p>{{i18n .Lang "home.motivation.p1"}}</p>
+            </div>
+
+            <div class="col-12">
+                <h3>{{i18n .Lang "home.principles.header"}}</h3>
+                <p>{{i18n .Lang "home.principles.p1"}}</p>
+                <p>{{i18n .Lang "home.principles.p2"}}</p>
+            </div>
+
+            <div class="col-12">
+                <h3>{{i18n .Lang "home.goal.header"}}</h3>
+                <p>{{i18n .Lang "home.goal.p1"}}</p>
+                <p>{{i18n .Lang "home.goal.p2"}}</p>
+                <p>{{i18n .Lang "home.goal.p3"}}</p>
+            </div>
+
+            <div class="col-12">
+                <h3>{{i18n .Lang "home.technologies.header"}}</h3>
+                <p><span id="blockchain-term" class="font-weight-bold">{{i18n .Lang "home.technologies.blockchain.term"}}</span> {{i18n .Lang "home.technologies.blockchain.definition"}}</p>
+                <p><span id="smart-contract-term" class="font-weight-bold">{{i18n .Lang "home.technologies.smart-contracts.term"}}</span> {{i18n .Lang "home.technologies.smart-contracts.definition"}}</p>
+                <p><span id="cloud-technologies-term" class="font-weight-bold">{{i18n .Lang "home.technologies.cloud-technologies.term"}}</span> {{i18n .Lang "home.technologies.cloud-technologies.definition"}}</p>
+                <p><span id="decentralized-applications-term" class="font-weight-bold">{{i18n .Lang "home.technologies.decentralized-applications.term"}}</span> {{i18n .Lang "home.technologies.decentralized-applications.definition"}}</p>
+                <p><span id="open-source-term" class="font-weight-bold">{{i18n .Lang "home.technologies.open-source.term"}}</span> {{i18n .Lang "home.technologies.open-source.definition"}}</p>
+                <div class="card">
+                    <div class="card-header alert-secondary">{{i18n .Lang "note"}}</div>
+                    <div class="card-body">
+                        <p class="card-text">{{i18n .Lang "home.technologies.note"}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <h3>{{i18n .Lang "home.management.header"}}</h3>
+                <p>{{i18n .Lang "home.management.p1"}}</p>
+            </div>
+
+            <div class="col-12">
+                <h3 id="projects">{{i18n .Lang "home.projects.header"}}</h3>
+            </div>
+
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="card border-primary h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="fa fa-file-contract fa-lg"></span> {{i18n .Lang "home.projects.housing-cooperative.header"}}</h5>
+                        <p class="card-text">{{i18n .Lang "home.projects.housing-cooperative.description"}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/project/housing-cooperative.html" class="btn btn-primary">{{i18n .Lang "details"}}...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="card border-secondary h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="fa fa-dove fa-lg"></span> {{i18n .Lang "home.projects.ussr-2.0.header"}}</h5>
+                        <p class="card-text">{{i18n .Lang "home.projects.ussr-2.0.description"}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/project/ussr-2.0.html" class="btn btn-secondary">{{i18n .Lang "details"}}...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="card border-secondary h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="fa fa-blind fa-lg"></span> {{i18n .Lang "home.projects.pension-fund.header"}}</h5>
+                        <p class="card-text">{{i18n .Lang "home.projects.pension-fund.description"}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/project/pension-fund.html" class="btn btn-secondary">{{i18n .Lang "details"}}...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="card border-secondary h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="fa fa-clipboard-list fa-lg"></span> {{i18n .Lang "home.projects.municipal-services.header"}}</h5>
+                        <p class="card-text">{{i18n .Lang "home.projects.municipal-services.description"}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/project/municipal-services.html" class="btn btn-secondary">{{i18n .Lang "details"}}...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-12 mb-3">
+                <div class="card border-secondary h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><span class="fa fa-piggy-bank fa-lg"></span> {{i18n .Lang "home.projects.bank.header"}}</h5>
+                        <p class="card-text">{{i18n .Lang "home.projects.bank.description"}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/project/bank.html" class="btn btn-secondary">{{i18n .Lang "details"}}...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header alert-secondary">
+                        {{i18n .Lang "note"}}
+                    </div>
+                    <div class="card-body">
+                        <p>{{i18n .Lang "home.projects.note"}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <h3>{{i18n .Lang "home.introduction.header"}}</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-12">
+                        <p>{{i18n .Lang "home.introduction.p1"}}</p>
+                        <p>{{i18n .Lang "home.introduction.p2"}}</p>
+                        <p>{{i18n .Lang "home.introduction.p3"}}</p>
+                        <p>{{i18n .Lang "home.introduction.p4"}}</p>
+                        <p>{{i18n .Lang "home.introduction.p5"}}</p>
+                    </div>
+                    <div class="col-lg-8 col-12">
+                        <div class="embed-responsive embed-responsive-4by3">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YaRK8NKHcN4?rel=0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <h3>{{i18n .Lang "home.investment.header"}}</h3>
+                <p>{{i18n .Lang "home.investment.p1"}}</p>
+                <p>{{i18n .Lang "home.investment.p2"}}</p>
+                <p>{{i18n .Lang "home.investment.p3"}}</p>
+            </div>
+        </div>
+    </div>
+{{ end }}

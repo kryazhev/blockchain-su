@@ -1,0 +1,102 @@
+{{ template "common/layout.html" . }}
+
+{{ define "body" }}
+    <div class="container">
+        <div class="row mt-3">
+
+            <div class="col-md-3 col-sm-12 align-self-center">
+                <img class="img-thumbnail mx-auto d-block" src="/static/img/photo.jpg" alt="{{i18n .Lang "about-us.about-me.photo"}}">
+            </div>
+
+            <div class="col-md-9 col-sm-12">
+                <div class="card card-body bg-light">
+                    <blockquote class="blockquote ">
+                        <p class="mb-0">{{i18n .Lang "quote.q1.p1"}}</p>
+                        <p class="mb-0">{{i18n .Lang "quote.q1.p2"}}</p>
+                        <p class="mb-0">{{i18n .Lang "quote.q1.p3"}}</p>
+                        <p class="mb-0">{{i18n .Lang "quote.q1.p4"}}</p>
+                        <footer class="blockquote-footer  text-right">
+                        {{i18n .Lang "quote.q1.author"}} (<cite title="{{i18n .Lang "quote.q1.source"}}">{{i18n .Lang "quote.q1.source"}}</cite>)
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <h5>{{i18n .Lang "about-us.about-me.header"}}</h5>
+                <p>{{i18n .Lang "about-us.about-me.p1"}}</p>
+            </div>
+
+            <div class="col-12 mt-3">
+                <h5>{{i18n .Lang "about-us.genesis.header"}}</h5>
+                <p>{{i18n .Lang "about-us.genesis.p1"}}</p>
+            </div>
+
+            <div class="col-12">
+                <div class="card card-body bg-light">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">{{i18n .Lang "quote.q2"}}</p>
+                        <footer class="blockquote-footer text-right">{{i18n .Lang "quote.q2.author"}}</footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <p>{{i18n .Lang "about-us.genesis.p2"}}</p>
+                <p>{{i18n .Lang "about-us.genesis.p3"}}</p>
+            </div>
+
+            <div class="col-12 mt-3">
+                <h5>{{i18n .Lang "about-us.goal.header"}}</h5>
+                <p>{{i18n .Lang "about-us.goal.p1"}}</p>
+            </div>
+
+            <div class="col-12">
+                <div class="card card-body bg-light">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">{{i18n .Lang "quote.q3"}}</p>
+                        <footer class="blockquote-footer text-right">{{i18n .Lang "quote.q3.author"}}</footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <p>{{i18n .Lang "about-us.goal.p2"}}</p>
+            </div>
+
+            <div class="col-12">
+                <div class="card card-body bg-light">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">{{i18n .Lang "quote.q4"}}</p>
+                        <footer class="blockquote-footer text-right">{{i18n .Lang "quote.q4.author"}}</footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <p>{{i18n .Lang "about-us.goal.p3"}}</p>
+                <p>{{i18n .Lang "about-us.goal.p4"}}</p>
+            </div>
+
+            <div class="col-12 mt-3">
+                <h5>{{i18n .Lang "about-us.conclusion.header"}}</h5>
+                <p>{{i18n .Lang "about-us.conclusion.p1"}}</p>
+            </div>
+
+            <div class="col-12">
+                <div class="card card-body bg-light">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">{{i18n .Lang "quote.q5"}}</p>
+                        <footer class="blockquote-footer text-right">{{i18n .Lang "quote.q5.author"}}</footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="col-12 mt-3">
+                <p>{{i18n .Lang "about-us.conclusion.p2"}}</p>
+                <p>{{i18n .Lang "about-us.conclusion.p3"}}</p>
+            </div>
+
+        </div>
+    </div>
+{{ end }}
