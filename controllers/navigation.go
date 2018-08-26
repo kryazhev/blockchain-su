@@ -1,23 +1,6 @@
 package controllers
 
-import (
-	"github.com/astaxie/beego"
-)
-
-type AppController struct {
-	beego.Controller
-}
-
-func (c *AppController) Prepare() {
-	if c.Data["Lang"] == nil {
-		lang := c.Ctx.GetCookie("lang")
-		if lang == "" {
-			lang = "ru"
-		}
-		c.Data["Lang"] = lang
-	}
-}
-
+/* Common */
 func (c *AppController) Get() {
 	c.Data["Page"] = "home"
 	c.TplName = "home.html"

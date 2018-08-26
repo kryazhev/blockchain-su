@@ -1,6 +1,7 @@
 package models
 
 import (
+	"errors"
 	"net/smtp"
 	"os"
 )
@@ -13,6 +14,10 @@ func LookupEnv(key, fallback string) string {
 }
 
 func SendEmail(from string, to string, subject string, body string) error {
+	if len(body) == 0 {
+		return errors.New("body must not be empty")
+	}
+
 	if from == "" {
 		from = "unknown@gmail.com"
 	}
