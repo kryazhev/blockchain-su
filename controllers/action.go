@@ -5,23 +5,36 @@ import (
 	"github.com/kryazhev/blockchain-su/models"
 )
 
+var languages = []string{
+	"ru", "az", "am", "by", "ge",
+	"kz", "kg", "lv", "lt", "md",
+	"tj", "tm", "ua", "uz", "ee",
+	"gb"}
+
 func (c *AppController) ChangeLanguage() {
 	lang := c.GetString("lang", "ru")
+	if !models.HasElem(languages, lang) {
+		lang = "ru"
+	}
 	c.Ctx.SetCookie("lang", lang)
-
 	c.Data["Lang"] = lang
-	c.Data["Page"] = "home"
-	c.TplName = "home.html"
+
+	page := c.GetString("page", "home")
+	if !models.HasElem(pages, page) {
+		page = "home"
+	}
+
+	c.render(page)
 }
 
 func (c *AppController) Feedback() {
 	err := models.SendEmail(c.GetString("email"), "vassiliy.kryazhev@gmail.com", "Feedback", c.GetString("message"))
 
 	if err == nil {
-		c.AjaxResponseSuccess(nil)
+		c.ajaxResponseSuccess(nil)
 	} else {
 		beego.Error("Can`t sent email ", err)
-		c.AjaxResponseFail(err.Error())
+		c.ajaxResponseFail(err.Error())
 	}
 }
 

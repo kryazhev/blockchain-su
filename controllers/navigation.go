@@ -2,42 +2,34 @@ package controllers
 
 /* Common */
 func (c *AppController) Get() {
-	c.Data["Page"] = "home"
-	c.TplName = "home.html"
+	c.render("home")
 }
 
 func (c *AppController) AboutUs() {
-	c.Data["Page"] = "about-us"
-	c.TplName = "about-us.html"
+	c.render("about-us")
 }
 
 func (c *AppController) ContactUs() {
-	c.Data["Page"] = "contact-us"
-	c.TplName = "contact-us.html"
+	c.render("contact-us")
 }
 
 /* Projects */
 func (c *AppController) HousingCooperative() {
-	c.Data["Page"] = "project.housing-cooperative"
-	c.TplName = "project/housing-cooperative.html"
+	c.render("project.housing-cooperative")
 }
 
 func (c *AppController) Ussr() {
-	c.Data["Page"] = "project.ussr-2.0"
-	c.TplName = "project/ussr-2.0.html"
+	c.render("project.ussr-2.0")
 }
 
 func (c *AppController) PensionFund() {
-	c.Data["Page"] = "project.pension-fund"
-	c.TplName = "project/pension-fund.html"
+	c.render("project.pension-fund")
 }
 
 func (c *AppController) MunicipalServices() {
-	c.Data["Page"] = "project.municipal-services"
-	c.TplName = "project/municipal-services.html"
+	c.render("project.municipal-services")
 }
 
 func (c *AppController) Bank() {
-	c.Data["Page"] = "project.bank"
-	c.TplName = "project/bank.html"
+	c.render("project.bank")
 }

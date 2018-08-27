@@ -4,7 +4,22 @@ import (
 	"errors"
 	"net/smtp"
 	"os"
+	"reflect"
 )
+
+func HasElem(slice interface{}, elem interface{}) bool {
+	data := reflect.ValueOf(slice)
+
+	if data.Kind() == reflect.Slice {
+		for i := 0; i < data.Len(); i++ {
+			if data.Index(i).Interface() == elem {
+				return true
+			}
+		}
+	}
+
+	return false
+}
 
 func LookupEnv(key, fallback string) string {
 	if value, ok := os.LookupEnv(key); ok {
