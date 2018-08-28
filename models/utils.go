@@ -2,10 +2,15 @@ package models
 
 import (
 	"errors"
+	"html/template"
 	"net/smtp"
 	"os"
 	"reflect"
 )
+
+func SafeHtml(html string) template.HTML {
+	return template.HTML(html)
+}
 
 func HasElem(slice interface{}, elem interface{}) bool {
 	data := reflect.ValueOf(slice)

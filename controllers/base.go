@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/session"
 	"github.com/kryazhev/blockchain-su/models"
 	"strings"
 )
@@ -10,13 +11,38 @@ var pages = []string{
 	"home", "about-us", "contact-us",
 	"project.housing-cooperative", "project.ussr-2.0", "project.pension-fund", "project.municipal-services", "project.bank"}
 
+var globalSessions *session.Manager
+
+func init() {
+	sessionConfig := &session.ManagerConfig{
+		CookieName: "gosessionid",
+		Gclifetime: 3600,
+	}
+	globalSessions, _ := session.NewManager("memory", sessionConfig)
+	go globalSessions.GC()
+}
+
 type AppController struct {
 	beego.Controller
 }
 
-func (c *AppController) render(page string) {
+func (c *AppController) initData(page string) {
+	if !models.HasElem(pages, page) {
+		page = "home"
+	}
+
 	c.Data["Page"] = page
 	c.TplName = strings.Replace(page, ".", "/", 1) + ".html"
+}
+
+func (c *AppController) initDataWithUser(page string, user *models.User) {
+	if user != nil {
+		c.Data["User"] = user
+	} else {
+		delete(c.Data, "User")
+	}
+
+	c.initData(page)
 }
 
 func (c *AppController) ajaxResponseSuccess(data interface{}) {
@@ -30,6 +56,11 @@ func (c *AppController) ajaxResponseFail(message string) {
 }
 
 func (c *AppController) Prepare() {
+	user := c.GetSession("user")
+	if user != nil {
+		c.Data["User"] = user
+	}
+
 	if c.Data["Lang"] == nil {
 		lang := c.Ctx.GetCookie("lang")
 		if len(lang) == 0 {

@@ -19,6 +19,9 @@ func init() {
 	beego.Router("/project/bank.html", &controllers.AppController{}, "get:Bank")
 
 	/* actions */
+	beego.Router("/action/login", &controllers.AppController{}, "post:Login")
+	beego.Router("/action/logout", &controllers.AppController{}, "get:Logout")
+
 	beego.Router("/action/change-language", &controllers.AppController{}, "get:ChangeLanguage")
 	beego.Router("/action/feedback", &controllers.AppController{}, "post:Feedback")
 	beego.Router("/action/request", &controllers.AppController{}, "get:Request")

@@ -1,17 +1,43 @@
-<!-- Lang Modal -->
-<div class="modal fade" id="langModal" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- Login Dialog -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{i18n .Lang "language.translation.modal.header"}}</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{i18n .Lang "navigation.login.dialog.header"}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>{{i18n .Lang "language.translation.modal.p1" | safeHtml}}</p>
-                <p>{{i18n .Lang "language.translation.modal.p2" | safeHtml}}</p>
-                <p>{{i18n .Lang "language.translation.modal.p3" | safeHtml}}</p>
+                <form class="form-inline" action="/action/login" method="post">
+                    <input type="hidden" name="page" value="{{.Page}}"/>
+                    <label class="sr-only" for="loginEmail">{{i18n .Lang "navigation.login.form.email"}}</label>
+                    <div class="input-group mb-2 mr-sm-2">
+                        <input type="text" class="form-control" id="loginEmail" name="email" placeholder="name@mail.ru">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mb-2">{{i18n .Lang "action.login"}}</button>
+                    <button type="button" class="btn btn-secondary ml-2 mb-2" data-dismiss="modal">{{i18n .Lang "action.cancel"}}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lang Dialog -->
+<div class="modal fade" id="langModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{i18n .Lang "navigation.translation.dialog.header"}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{i18n .Lang "navigation.translation.dialog.p1" | safeHtml}}</p>
+                <p>{{i18n .Lang "navigation.translation.dialog.p2" | safeHtml}}</p>
+                <p>{{i18n .Lang "navigation.translation.dialog.p3" | safeHtml}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{i18n .Lang "action.close"}}</button>
@@ -72,9 +98,22 @@
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-ee"></span> Eesti keel</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#"><span class="fa fa-sign-in-alt fa-lg"></span> {{i18n .Lang "action.login"}}</a>
-                </li>
+                {{if .User }}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ .User.Email}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarProjects">
+                            <a class="dropdown-item disabled" href="#"><span class="fa fa-cogs fa-lg"></span> {{i18n .Lang "navigation.settings"}}</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/action/logout?page={{.Page}}"><span class="fa fa-sign-out-alt fa-lg"></span> {{i18n .Lang "action.logout"}}</a>
+                        </div>
+                    </li>
+                {{ else }}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in-alt fa-lg"></span> {{i18n .Lang "action.login"}}</a>
+                    </li>
+                {{end}}
 {{/*
                 <li class="nav-item">
                     <a class="nav-link" href="/action/request" target="_blank">Request</a>

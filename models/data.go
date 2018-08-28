@@ -5,3 +5,11 @@ type Result struct {
 	Message string      `json:"message,omitempty"`
 	Data    interface{} `json:"data,omitempty"`
 }
+
+type User struct {
+	Email string
+}
+
+func NewUser(email string) *User {
+	return &User{Email: email}
+}

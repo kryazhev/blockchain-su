@@ -11,6 +11,22 @@ var languages = []string{
 	"tj", "tm", "ua", "uz", "ee",
 	"us"}
 
+func (c *AppController) Login() {
+	session := c.StartSession()
+
+	user := models.NewUser(c.GetString("email", ""))
+	session.Set("user", user)
+
+	c.initDataWithUser(c.GetString("page", "home"), user)
+}
+
+func (c *AppController) Logout() {
+	session := c.StartSession()
+	session.Delete("user")
+
+	c.initDataWithUser(c.GetString("page", "home"), nil)
+}
+
 func (c *AppController) ChangeLanguage() {
 	lang := c.GetString("lang", "ru")
 	if !models.HasElem(languages, lang) {
@@ -20,11 +36,7 @@ func (c *AppController) ChangeLanguage() {
 	c.Data["Lang"] = lang
 
 	page := c.GetString("page", "home")
-	if !models.HasElem(pages, page) {
-		page = "home"
-	}
-
-	c.render(page)
+	c.initData(page)
 }
 
 func (c *AppController) Feedback() {
@@ -39,6 +51,5 @@ func (c *AppController) Feedback() {
 }
 
 func (c *AppController) Request() {
-	c.Data["json"] = c.Ctx.Request.Header
-	c.ServeJSON()
+	c.ajaxResponseSuccess(c.Ctx.Request.Header)
 }

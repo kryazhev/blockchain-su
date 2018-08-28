@@ -3,15 +3,12 @@ package main
 import (
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
+	_ "github.com/kryazhev/blockchain-su/controllers"
+	"github.com/kryazhev/blockchain-su/models"
 	_ "github.com/kryazhev/blockchain-su/routers"
-	"html/template"
 	"os"
 	"strings"
 )
-
-func safeHtml(html string) template.HTML {
-	return template.HTML(html)
-}
 
 func main() {
 	// Display list of environment variables
@@ -32,6 +29,6 @@ func main() {
 	}
 
 	beego.AddFuncMap("i18n", i18n.Tr)
-	beego.AddFuncMap("safeHtml", safeHtml)
+	beego.AddFuncMap("safeHtml", models.SafeHtml)
 	beego.Run()
 }
