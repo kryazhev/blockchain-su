@@ -9,7 +9,7 @@ var languages = []string{
 	"ru", "az", "am", "by", "ge",
 	"kz", "kg", "lv", "lt", "md",
 	"tj", "tm", "ua", "uz", "ee",
-	"gb"}
+	"us"}
 
 func (c *AppController) ChangeLanguage() {
 	lang := c.GetString("lang", "ru")

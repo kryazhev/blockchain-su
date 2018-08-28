@@ -32,7 +32,7 @@ func (c *AppController) ajaxResponseFail(message string) {
 func (c *AppController) Prepare() {
 	if c.Data["Lang"] == nil {
 		lang := c.Ctx.GetCookie("lang")
-		if lang == "" {
+		if len(lang) == 0 {
 			lang = "ru"
 		}
 		c.Data["Lang"] = lang
