@@ -24,5 +24,5 @@ func init() {
 
 	beego.Router("/action/change-language", &controllers.AppController{}, "get:ChangeLanguage")
 	beego.Router("/action/feedback", &controllers.AppController{}, "post:Feedback")
-	beego.Router("/action/request", &controllers.AppController{}, "get:Request")
+	beego.Router("/action/header", &controllers.AppController{}, "get:Header")
 }

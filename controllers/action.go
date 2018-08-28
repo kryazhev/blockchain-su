@@ -50,6 +50,6 @@ func (c *AppController) Feedback() {
 	}
 }
 
-func (c *AppController) Request() {
+func (c *AppController) Header() {
 	c.ajaxResponseSuccess(c.Ctx.Request.Header)
 }
