@@ -3,22 +3,46 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{i18n .Lang "navigation.login.dialog.header"}}</h5>
+                <h5 class="modal-title">{{i18n .Lang "login.dialog.header"}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form class="form-inline" action="/action/login" method="post">
-                    <input type="hidden" name="page" value="{{.Page}}"/>
-                    <label class="sr-only" for="loginEmail">{{i18n .Lang "navigation.login.form.email"}}</label>
-                    <div class="input-group mb-2 mr-sm-2">
-                        <input type="text" class="form-control" id="loginEmail" name="email" placeholder="name@mail.ru">
-                    </div>
+                <p>{{i18n .Lang "login.form.description"}}</p>
+                <div>
+                    <a class="btn btn-block btn-social btn-lg btn-google">
+                        <span class="fab fa-google"></span> {{i18n .Lang "login.form.google.sign-in"}}
+                    </a>
 
-                    <button type="submit" class="btn btn-primary mb-2">{{i18n .Lang "action.login"}}</button>
-                    <button type="button" class="btn btn-secondary ml-2 mb-2" data-dismiss="modal">{{i18n .Lang "action.cancel"}}</button>
-                </form>
+                    <a class="btn btn-block btn-social btn-lg btn-facebook">
+                        <span class="fab fa-facebook"></span> {{i18n .Lang "login.form.facebook.sign-in"}}
+                    </a>
+
+                    <a class="btn btn-block btn-social btn-lg btn-odnoklassniki" data-toggle="popover" data-placement="right" data-content="{{i18n .Lang "not-implemented-yet"}}">
+                        <span class="fab fa-odnoklassniki"></span> {{i18n .Lang "login.form.odnoklassniki.sign-in"}}
+                    </a>
+
+                    <a class="btn btn-block btn-social btn-lg btn-vk" data-toggle="popover" data-placement="right" data-content="{{i18n .Lang "not-implemented-yet"}}">
+                        <span class="fab fa-vk"></span> {{i18n .Lang "login.form.vk.sign-in"}}
+                    </a>
+
+                    <a class="btn btn-block btn-social btn-lg btn-github" data-toggle="popover" data-placement="right" data-content="{{i18n .Lang "not-implemented-yet"}}">
+                        <span class="fab fa-github"></span> {{i18n .Lang "login.form.github.sign-in"}}
+                    </a>
+                </div>
+                <div class="mt-2">
+                    <form class="form-inline" action="/action/login" method="post">
+                        <input type="hidden" name="page" value="{{.Page}}"/>
+                        <label class="sr-only" for="loginEmail">{{i18n .Lang "login.form.email"}}</label>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <input type="text" class="form-control" id="loginEmail" name="email" placeholder="name@mail.ru">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mb-2">{{i18n .Lang "action.login"}}</button>
+                        <button type="button" class="btn btn-secondary ml-2 mb-2" data-dismiss="modal">{{i18n .Lang "action.cancel"}}</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -29,15 +53,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{i18n .Lang "navigation.translation.dialog.header"}}</h5>
+                <h5 class="modal-title">{{i18n .Lang "translation.dialog.header"}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>{{i18n .Lang "navigation.translation.dialog.p1" | safeHtml}}</p>
-                <p>{{i18n .Lang "navigation.translation.dialog.p2" | safeHtml}}</p>
-                <p>{{i18n .Lang "navigation.translation.dialog.p3" | safeHtml}}</p>
+                <p>{{i18n .Lang "translation.dialog.p1" | safeHtml}}</p>
+                <p>{{i18n .Lang "translation.dialog.p2" | safeHtml}}</p>
+                <p>{{i18n .Lang "translation.dialog.p3" | safeHtml}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{i18n .Lang "action.close"}}</button>

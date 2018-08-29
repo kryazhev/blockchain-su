@@ -88,14 +88,29 @@
                     </div>
 
                     <div role="tabpanel" class="tab-pane fade" id="data">
-                        {{ template "data/alert.html" i18n .Lang "under-construction" }}
+                        {{if .User }}
+                            {{ template "data/alert.html" i18n .Lang "under-construction" }}
+                        {{ else }}
+                            <div class="align-self-center">
+                                <a class="btn btn-block btn-outline-secondary" href="#" data-toggle="modal" data-target="#loginModal">
+                                    <span class="fa fa-sign-in-alt fa-lg"></span> {{i18n .Lang "action.login"}}
+                                </a>
+                            </div>
+                        {{end}}
                     </div>
 
                     <div role="tabpanel" class="tab-pane fade" id="code-tasks">
                         <ul>
-                            <li>Доработать прототип кооператива.</li>
+                            <li>Добавить аутентификацию OAuth2.0</li>
+                            <li>Добавить captcha</li>
+                            <li>Настройки сервисов, только через env variables</li>
+                            <li>Добавить интеграцию с hyperledger.</li>
                             <li>Добавить механизм голосования.</li>
                             <li>Добавить интеграцию с платежными системами.</li>
+                            <li>На проде использовать только https.</li>
+                            <li>Разобраться с деплоем приложения в облачной среде.</li>
+                            <li>Проработать механизмы: обновления, резервного копирования и восстановления.</li>
+                            <li>Добавить личный кабинет, возможно настройки.</li>
                         </ul>
                     </div>
 
