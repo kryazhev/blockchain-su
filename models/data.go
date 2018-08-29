@@ -1,5 +1,7 @@
 package models
 
+import "strings"
+
 type Result struct {
 	Success bool        `json:"success,omitempty"`
 	Message string      `json:"message,omitempty"`
@@ -12,4 +14,13 @@ type User struct {
 
 func NewUser(email string) *User {
 	return &User{Email: email}
+}
+
+func (u *User) Name() string {
+	data := strings.Split(u.Email, "@")
+	if data != nil {
+		return data[0]
+	} else {
+		return ""
+	}
 }

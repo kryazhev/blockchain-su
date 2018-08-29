@@ -1,9 +1,9 @@
 <!-- Login Dialog -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{i18n .Lang "navigation.login.dialog.header"}}</h5>
+                <h5 class="modal-title">{{i18n .Lang "navigation.login.dialog.header"}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -29,7 +29,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{{i18n .Lang "navigation.translation.dialog.header"}}</h5>
+                <h5 class="modal-title">{{i18n .Lang "navigation.translation.dialog.header"}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -71,12 +71,21 @@
                     <a class="nav-link" href="/about-us.html"><span class="fa fa-address-card fa-lg"></span> {{i18n .Lang "navigation.about-us"}}</a>
                 </li>
                 <li class="nav-item{{if eq .Page "contact-us"}} active{{end}}">
-                    <a class="nav-link" href="/contact-us.html"><span class="fa fa-hand-holding-usd fa-lg"></span> {{i18n .Lang "navigation.contact-us"}}</a>
+                    <a class="nav-link" href="/contact-us.html"><span class="fa fa-seedling fa-lg"></span> {{i18n .Lang "navigation.contact-us"}}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="fa fa-toolbox fa-lg"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/action/header" target="_blank">Request Header</a>
+                        <a class="dropdown-item" href="/action/sessions" target="_blank">Sessions</a>
+                    </div>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarLanguages" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="flag-icon flag-icon-{{.Lang}}"></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarLanguages">
@@ -100,10 +109,10 @@
                 </li>
                 {{if .User }}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{ .User.Email}}
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="fa fa-user-circle fa-lg"></span> {{.User.Name}}
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarProjects">
+                        <div class="dropdown-menu">
                             <a class="dropdown-item disabled" href="#"><span class="fa fa-cogs fa-lg"></span> {{i18n .Lang "navigation.settings"}}</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/action/logout?page={{.Page}}"><span class="fa fa-sign-out-alt fa-lg"></span> {{i18n .Lang "action.logout"}}</a>
@@ -114,11 +123,6 @@
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in-alt fa-lg"></span> {{i18n .Lang "action.login"}}</a>
                     </li>
                 {{end}}
-{{/*
-                <li class="nav-item">
-                    <a class="nav-link" href="/action/header" target="_blank">RequestHeader</a>
-                </li>
-*/}}
             </ul>
         </div>
     </div>

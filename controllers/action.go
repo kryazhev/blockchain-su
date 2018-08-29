@@ -21,8 +21,7 @@ func (c *AppController) Login() {
 }
 
 func (c *AppController) Logout() {
-	session := c.StartSession()
-	session.Delete("user")
+	beego.GlobalSessions.SessionDestroy(c.Ctx.ResponseWriter, c.Ctx.Request)
 
 	c.initDataWithUser(c.GetString("page", "home"), nil)
 }
@@ -50,6 +49,11 @@ func (c *AppController) Feedback() {
 	}
 }
 
+/* Developer Tools */
 func (c *AppController) Header() {
 	c.ajaxResponseSuccess(c.Ctx.Request.Header)
+}
+
+func (c *AppController) Sessions() {
+	c.ajaxResponseSuccess(beego.GlobalSessions.GetActiveSession())
 }

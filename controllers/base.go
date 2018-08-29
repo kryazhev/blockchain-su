@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/session"
 	"github.com/kryazhev/blockchain-su/models"
 	"strings"
 )
@@ -10,17 +9,6 @@ import (
 var pages = []string{
 	"home", "about-us", "contact-us",
 	"project.housing-cooperative", "project.ussr-2.0", "project.pension-fund", "project.municipal-services", "project.bank"}
-
-var globalSessions *session.Manager
-
-func init() {
-	sessionConfig := &session.ManagerConfig{
-		CookieName: "gosessionid",
-		Gclifetime: 3600,
-	}
-	globalSessions, _ := session.NewManager("memory", sessionConfig)
-	go globalSessions.GC()
-}
 
 type AppController struct {
 	beego.Controller

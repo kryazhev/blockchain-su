@@ -3,7 +3,6 @@ package main
 import (
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
-	_ "github.com/kryazhev/blockchain-su/controllers"
 	"github.com/kryazhev/blockchain-su/models"
 	_ "github.com/kryazhev/blockchain-su/routers"
 	"os"
@@ -27,6 +26,8 @@ func main() {
 			return
 		}
 	}
+
+	//beego.AppConfig.Set("sessionConfig", `{"cookieName": "gosessionid", "cclifetime": 3600}`)
 
 	beego.AddFuncMap("i18n", i18n.Tr)
 	beego.AddFuncMap("safeHtml", models.SafeHtml)

@@ -24,5 +24,9 @@ func init() {
 
 	beego.Router("/action/change-language", &controllers.AppController{}, "get:ChangeLanguage")
 	beego.Router("/action/feedback", &controllers.AppController{}, "post:Feedback")
+
+	/* developer tools */
+	/* TODO remove handlers on prod */
 	beego.Router("/action/header", &controllers.AppController{}, "get:Header")
+	beego.Router("/action/sessions", &controllers.AppController{}, "get:Sessions")
 }
