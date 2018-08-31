@@ -10,7 +10,7 @@
             </div>
             <div class="modal-body">
                 <p>{{i18n .Lang "login.form.description"}}</p>
-                <div>
+                <div class="text-white">
                     {{ template "common/sign-in.html" dict "Lang" .Lang "EndpointName" "google"}}
                     {{ template "common/sign-in.html" dict "Lang" .Lang "EndpointName" "facebook"}}
                     {{ template "common/sign-in.html" dict "Lang" .Lang "EndpointName" "odnoklassniki"}}
