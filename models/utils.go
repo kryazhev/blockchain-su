@@ -33,6 +33,21 @@ func LookupEnv(key, fallback string) string {
 	return fallback
 }
 
+func Dict(values ...interface{}) (map[string]interface{}, error) {
+	if len(values)%2 != 0 {
+		return nil, errors.New("invalid dict call")
+	}
+	dict := make(map[string]interface{}, len(values)/2)
+	for i := 0; i < len(values); i += 2 {
+		if key, ok := values[i].(string); ok {
+			dict[key] = values[i+1]
+		} else {
+			return nil, errors.New("dict keys must be strings")
+		}
+	}
+	return dict, nil
+}
+
 func SendEmail(from string, to string, subject string, body string) error {
 	if len(body) == 0 {
 		return errors.New("body must not be empty")

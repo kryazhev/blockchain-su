@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
+	_ "github.com/kryazhev/blockchain-su/controllers"
 	"github.com/kryazhev/blockchain-su/models"
 	_ "github.com/kryazhev/blockchain-su/routers"
 	"os"
@@ -22,8 +23,7 @@ func main() {
 	for _, lang := range langTypes {
 		beego.Trace("Loading language:", lang)
 		if err := i18n.SetMessage(lang, "static/i18n/locale_"+lang+".ini"); err != nil {
-			beego.Error("Fail to set message file:", err)
-			return
+			panic(err)
 		}
 	}
 
@@ -31,5 +31,7 @@ func main() {
 
 	beego.AddFuncMap("i18n", i18n.Tr)
 	beego.AddFuncMap("safeHtml", models.SafeHtml)
+	beego.AddFuncMap("dict", models.Dict)
+	beego.AddFuncMap("lookupEnv", models.LookupEnv)
 	beego.Run()
 }

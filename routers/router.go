@@ -19,7 +19,7 @@ func init() {
 	beego.Router("/project/bank.html", &controllers.AppController{}, "get:Bank")
 
 	/* actions */
-	beego.Router("/action/login", &controllers.AppController{}, "post:Login")
+	beego.Router("/action/oauth2-callback", &controllers.AppController{}, "get:Callback")
 	beego.Router("/action/logout", &controllers.AppController{}, "get:Logout")
 
 	beego.Router("/action/change-language", &controllers.AppController{}, "get:ChangeLanguage")
@@ -27,6 +27,7 @@ func init() {
 
 	/* developer tools */
 	/* TODO remove handlers on prod */
+	beego.Router("/action/login", &controllers.AppController{}, "post:Login")
 	beego.Router("/action/header", &controllers.AppController{}, "get:Header")
 	beego.Router("/action/sessions", &controllers.AppController{}, "get:Sessions")
 }

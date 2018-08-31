@@ -11,21 +11,6 @@ var languages = []string{
 	"tj", "tm", "ua", "uz", "ee",
 	"us"}
 
-func (c *AppController) Login() {
-	session := c.StartSession()
-
-	user := models.NewUser(c.GetString("email", ""))
-	session.Set("user", user)
-
-	c.initDataWithUser(c.GetString("page", "home"), user)
-}
-
-func (c *AppController) Logout() {
-	beego.GlobalSessions.SessionDestroy(c.Ctx.ResponseWriter, c.Ctx.Request)
-
-	c.initDataWithUser(c.GetString("page", "home"), nil)
-}
-
 func (c *AppController) ChangeLanguage() {
 	lang := c.GetString("lang", "ru")
 	if !models.HasElem(languages, lang) {
@@ -34,7 +19,7 @@ func (c *AppController) ChangeLanguage() {
 	c.Ctx.SetCookie("lang", lang)
 	c.Data["Lang"] = lang
 
-	page := c.GetString("page", "home")
+	page := c.GetString("page")
 	c.initData(page)
 }
 

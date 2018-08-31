@@ -44,6 +44,8 @@ func (c *AppController) ajaxResponseFail(message string) {
 }
 
 func (c *AppController) Prepare() {
+	c.Data["OAuthConfigs"] = oauthConfigs
+
 	user := c.GetSession("user")
 	if user != nil {
 		c.Data["User"] = user
