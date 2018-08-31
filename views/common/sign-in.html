@@ -1,4 +1,7 @@
-{{ $signInCaptionKey := print "login.form." .EndpointName ".sign-in" }}
-<a class="btn btn-block btn-social btn-lg btn-{{.EndpointName}}" onclick="oauth.loginPopup('{{.EndpointName}}'); return false;">
-    <span class="fab fa-{{.EndpointName}}"></span> {{i18n .Lang $signInCaptionKey}}
-</a>
+{{ $config := index .OAuthConfigs .EndpointName }}
+{{ if $config }}
+    {{ $signInCaptionKey := print "login.form." .EndpointName ".sign-in" }}
+    <a class="btn btn-block btn-social btn-lg btn-{{.EndpointName}}" href="{{ .EndpointName | $config.AuthCodeURL }}">
+        <span class="fab fa-{{.EndpointName}}"></span> {{i18n .Lang $signInCaptionKey}}
+    </a>
+{{ end }}

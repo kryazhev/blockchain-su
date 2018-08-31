@@ -31,7 +31,7 @@ func main() {
 
 	beego.AddFuncMap("i18n", i18n.Tr)
 	beego.AddFuncMap("safeHtml", models.SafeHtml)
-	beego.AddFuncMap("dict", models.Dict)
+	beego.AddFuncMap("data", models.Data)
 	beego.AddFuncMap("lookupEnv", models.LookupEnv)
 	beego.Run()
 }

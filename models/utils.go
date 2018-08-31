@@ -33,19 +33,29 @@ func LookupEnv(key, fallback string) string {
 	return fallback
 }
 
-func Dict(values ...interface{}) (map[string]interface{}, error) {
-	if len(values)%2 != 0 {
-		return nil, errors.New("invalid dict call")
+func Data(values ...interface{}) (map[interface{}]interface{}, error) {
+	if len(values)%2 != 1 {
+		return nil, errors.New("invalid data call")
 	}
-	dict := make(map[string]interface{}, len(values)/2)
-	for i := 0; i < len(values); i += 2 {
+	data := make(map[interface{}]interface{}, len(values)/2)
+	for i := 0; i < len(values)-1; i += 2 {
 		if key, ok := values[i].(string); ok {
-			dict[key] = values[i+1]
+			data[key] = values[i+1]
 		} else {
-			return nil, errors.New("dict keys must be strings")
+			return nil, errors.New("data keys must be strings")
 		}
 	}
-	return dict, nil
+
+	last := values[len(values)-1]
+	if reflect.ValueOf(last).Kind() == reflect.Map {
+		for k, v := range last.(map[interface{}]interface{}) {
+			data[k] = v
+		}
+	} else {
+		return nil, errors.New("data last elem must be map[interface{}]interface{}")
+	}
+
+	return data, nil
 }
 
 func SendEmail(from string, to string, subject string, body string) error {

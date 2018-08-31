@@ -26,9 +26,11 @@
 
 <script>
     // https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
+/*
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+*/
 
     // setup messenger
     Messenger.options = {
@@ -50,28 +52,30 @@
     {{ end }}
     };
 
-    var OAuthCode = function(cfg) {
-        this.config = config;
-        this.loginPopup  = function(service) {
-            var cfg = this.config;
-            this.loginPopupUri(cfg[service]['authUri'], cfg[service]['redirectUri']);
-        };
-        this.loginPopupUri = function(authUri, redirectUri) {
-            var win        = window.open(authUri, 'oauth-dialog', 'width=800, height=600');
-            var pollOAuth  = window.setInterval(function() {
-                try {
-                    console.log("DOCUMENT_URI: " + win.document.URL);
-                    console.log("REDIRECT_URI: " + redirectUri);
-                    if (win.document.URL.indexOf(redirectUri) != -1) {
-                        window.clearInterval(pollOAuth);
-                        location.reload();
+    /*
+        var OAuthCode = function(cfg) {
+            this.config = config;
+            this.loginPopup  = function(service) {
+                var cfg = this.config;
+                this.loginPopupUri(cfg[service]['authUri'], cfg[service]['redirectUri']);
+            };
+            this.loginPopupUri = function(authUri, redirectUri) {
+                var win        = window.open(authUri, 'oauth-dialog', 'width=800, height=600');
+                var pollOAuth  = window.setInterval(function() {
+                    try {
+                        console.log("DOCUMENT_URI: " + win.document.URL);
+                        console.log("REDIRECT_URI: " + redirectUri);
+                        if (win.document.URL.indexOf(redirectUri) != -1) {
+                            window.clearInterval(pollOAuth);
+                            location.reload();
+                        }
+                    } catch(e) {
+                        console.log(e)
                     }
-                } catch(e) {
-                    console.log(e)
-                }
-            }, 100);
-        }
-    };
+                }, 100);
+            }
+        };
 
-    var oauth = new OAuthCode(config);
+        var oauth = new OAuthCode(config);
+    */
 </script>
