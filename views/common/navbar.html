@@ -120,7 +120,12 @@
                 {{if .User }}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="fa fa-user-circle fa-lg"></span> {{.User.Name}}
+                            {{ if .User.Picture }}
+                                <img src="{{.User.Picture}}" class="rounded-circle" height="24" width="24"/>
+                            {{ else }}
+                                <span class="fa fa-user-circle fa-lg"></span>
+                            {{ end }}
+                            {{.User.Name}}
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#" data-toggle="popover" data-placement="right" data-content="{{i18n .Lang "not-implemented-yet"}}"><span class="fa fa-cogs fa-lg"></span> {{i18n .Lang "navigation.settings"}}</a>

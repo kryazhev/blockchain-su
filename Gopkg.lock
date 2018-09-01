@@ -74,7 +74,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:a2b4eebfafefcce96561b278461c815df6535e4382e95c0d2640a04146e1c3b3"
+  digest = "1:9afeabf6dbec81891b380d4e1a12cc114ecfb63f2db3c1ee596ff05c5aa639ef"
   name = "golang.org/x/oauth2"
   packages = [
     ".",
@@ -85,6 +85,7 @@
     "jws",
     "jwt",
     "odnoklassniki",
+    "vk",
   ]
   pruneopts = "UT"
   revision = "d2e6202438beef2727060aa7cabdd924d92ebfd9"
@@ -127,6 +128,7 @@
     "golang.org/x/oauth2/github",
     "golang.org/x/oauth2/google",
     "golang.org/x/oauth2/odnoklassniki",
+    "golang.org/x/oauth2/vk",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

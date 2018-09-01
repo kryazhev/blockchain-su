@@ -3,16 +3,18 @@ package main
 import (
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
-	_ "github.com/kryazhev/blockchain-su/controllers"
 	"github.com/kryazhev/blockchain-su/models"
+	_ "github.com/kryazhev/blockchain-su/models"
 	_ "github.com/kryazhev/blockchain-su/routers"
 	"os"
 	"strings"
 )
 
+var envNames = []string{"PORT", "run-mode", "smtp.address", "smtp.host", "smtp.user", "smtp.password"}
+
 func main() {
 	// Display list of environment variables
-	for _, env := range []string{"PORT", "smtp.address", "smtp.host", "smtp.user", "smtp.password"} {
+	for _, env := range envNames {
 		beego.Trace(env + "=" + os.Getenv(env))
 	}
 

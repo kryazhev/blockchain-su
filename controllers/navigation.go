@@ -1,6 +1,6 @@
 package controllers
 
-/* Common */
+/* Base */
 func (c *AppController) Get() {
 	c.initData("home")
 }
