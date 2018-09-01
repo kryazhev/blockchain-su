@@ -4,8 +4,8 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
 	"github.com/kryazhev/blockchain-su/models"
-	_ "github.com/kryazhev/blockchain-su/models"
 	_ "github.com/kryazhev/blockchain-su/routers"
+	_ "github.com/kryazhev/oauth2"
 	"os"
 	"strings"
 )

@@ -3,6 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/kryazhev/blockchain-su/models"
+	oauth2 "github.com/kryazhev/oauth2"
 	"strings"
 )
 
@@ -23,7 +24,7 @@ func (c *AppController) initData(page string) {
 	c.TplName = strings.Replace(page, ".", "/", 1) + ".html"
 }
 
-func (c *AppController) initDataWithUser(page string, user *models.User) {
+func (c *AppController) initDataWithUser(page string, user *oauth2.User) {
 	if user != nil {
 		c.Data["User"] = user
 	} else {
@@ -44,7 +45,7 @@ func (c *AppController) ajaxResponseFail(message string) {
 }
 
 func (c *AppController) Prepare() {
-	c.Data["OAuthConfigs"] = models.AuthConfigs
+	c.Data["OAuthConfigs"] = oauth2.AuthConfigs
 
 	user := c.GetSession("user")
 	if user != nil {

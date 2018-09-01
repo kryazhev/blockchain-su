@@ -52,6 +52,14 @@
   version = "v1.2.0"
 
 [[projects]]
+  branch = "master"
+  digest = "1:226d25f3931c7fb02ec185d782ce92c5c8f957eda014974c544e804c6782edd6"
+  name = "github.com/kryazhev/oauth2"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "478451c89f0a32c956f41db4c65e3b112beda19a"
+
+[[projects]]
   digest = "1:a2057c5b6feb8feb081ce9987f0e4d0713c6b3a6d3824900e35750f349223a25"
   name = "golang.org/x/crypto"
   packages = [
@@ -123,12 +131,7 @@
   input-imports = [
     "github.com/astaxie/beego",
     "github.com/beego/i18n",
-    "golang.org/x/oauth2",
-    "golang.org/x/oauth2/facebook",
-    "golang.org/x/oauth2/github",
-    "golang.org/x/oauth2/google",
-    "golang.org/x/oauth2/odnoklassniki",
-    "golang.org/x/oauth2/vk",
+    "github.com/kryazhev/oauth2",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
