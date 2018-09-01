@@ -53,21 +53,22 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:699dd0e7995c578eb01e4a9b0aa1003809bcb4df8eefea40d5e5fb5a2f8aac25"
+  digest = "1:599c9e137513ed0c618e1a62a128b3292cd4f27eef1d148987aea7dc59532fcd"
   name = "github.com/kryazhev/oauth2"
   packages = ["."]
   pruneopts = "UT"
-  revision = "630939882ca476972c2850558fc616304b8b560f"
+  revision = "55f7e213e25f0e3b86e68d531e4690444bb36829"
 
 [[projects]]
-  digest = "1:a2057c5b6feb8feb081ce9987f0e4d0713c6b3a6d3824900e35750f349223a25"
+  branch = "master"
+  digest = "1:dedf20eb0d3e8d6aa8a4d3d2fae248222b688ed528201995e152cc497899123c"
   name = "golang.org/x/crypto"
   packages = [
     "acme",
     "acme/autocert",
   ]
   pruneopts = "UT"
-  revision = "c126467f60eb25f8f27e5a981f32a87e3965053f"
+  revision = "182538f80094b6a8efaade63a8fd8e0d9d5843dd"
 
 [[projects]]
   branch = "master"
