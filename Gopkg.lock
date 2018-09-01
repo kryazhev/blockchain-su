@@ -53,11 +53,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:226d25f3931c7fb02ec185d782ce92c5c8f957eda014974c544e804c6782edd6"
+  digest = "1:699dd0e7995c578eb01e4a9b0aa1003809bcb4df8eefea40d5e5fb5a2f8aac25"
   name = "github.com/kryazhev/oauth2"
   packages = ["."]
   pruneopts = "UT"
-  revision = "478451c89f0a32c956f41db4c65e3b112beda19a"
+  revision = "630939882ca476972c2850558fc616304b8b560f"
 
 [[projects]]
   digest = "1:a2057c5b6feb8feb081ce9987f0e4d0713c6b3a6d3824900e35750f349223a25"
