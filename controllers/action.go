@@ -3,7 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/kryazhev/blockchain-su/models"
-	oauth2 "github.com/kryazhev/oauth2"
+	"github.com/kryazhev/oauth2"
 	"regexp"
 )
 
@@ -26,7 +26,7 @@ func (c *AppController) Callback() {
 
 		config := oauth2.AuthConfigs[endpointName]
 
-		user, err = config.UserInfo(endpointName, code)
+		user, err = config.GetUser(endpointName, code)
 
 		if err != nil {
 			beego.Error(err)

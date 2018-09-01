@@ -3,7 +3,7 @@ package controllers
 import (
 	"github.com/astaxie/beego"
 	"github.com/kryazhev/blockchain-su/models"
-	oauth2 "github.com/kryazhev/oauth2"
+	"github.com/kryazhev/oauth2"
 	"strings"
 )
 
