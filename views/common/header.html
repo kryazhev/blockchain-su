@@ -38,6 +38,22 @@
         theme: 'future'
     };
 
+    function message(type, msg) {
+        Messenger().post({
+            type: type,
+            message: msg,
+            showCloseButton: true
+        });
+    }
+
+    function successMessage(msg) {
+        message('success', msg);
+    }
+
+    function failMessage(msg) {
+        message('error', msg);
+    }
+
     // show popover
     $(function () {
         $('[data-toggle="popover"]').popover();

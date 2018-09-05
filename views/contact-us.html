@@ -1,31 +1,42 @@
 {{ template "common/layout.html" . }}
 
 {{ define "head" }}
-    <script>
-        $(function () {
-            $("#feedbackButton").click(function () {
-                $("#feedbackButton").addClass("disabled");
+<script>
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    if (form.checkValidity()) {
+                        $("#feedbackButton").addClass("disabled");
 
-                $.post("/action/feedback", $("#feedbackForm").serialize()).done(function(data) {
-                    console.log(data);
-                    $("#feedbackButton").removeClass("disabled");
-                    if (data.success) {
-                        Messenger().post({
-                            message: '{{i18n .Lang "contact-us.feedback.action-result.success"}}',
-                            type: 'success',
-                            showCloseButton: true
-                        });
-                    } else {
-                        Messenger().post({
-                            message: '{{i18n .Lang "contact-us.feedback.action-result.fail"}}',
-                            type: 'error',
-                            showCloseButton: true
-                        });
+                        $.post("/action/feedback", $("#feedbackForm").serialize())
+                                .done(function(data) {
+                                    if (data.success) {
+                                        successMessage('{{i18n .Lang "contact-us.feedback.action-result.success"}}');
+                                    } else {
+                                        failMessage('{{i18n .Lang "contact-us.feedback.action-result.fail"}}');
+                                    }
+                                })
+                                .fail(function () {
+                                    failMessage('{{i18n .Lang "contact-us.feedback.action-result.fail"}}');
+                                })
+                                .always(function () {
+                                    $("#feedbackButton").removeClass("disabled");
+                                    form.classList.remove('was-validated');
+                                });
                     }
-                });
+                    form.classList.add('was-validated');
+                }, false);
             });
-        });
-    </script>
+        }, false);
+    })();
+</script>
 {{ end }}
 
 {{ define "body" }}
@@ -108,20 +119,24 @@
                 <h5 id="feedback">{{i18n .Lang "contact-us.feedback.header"}}</h5>
                 <p>{{i18n .Lang "contact-us.feedback.p1"}}</p>
 
-                <form id="feedbackForm" action="/action/feedback" method="post" class="border border-secondary rounded p-3">
+                <form id="feedbackForm" action="/action/feedback" method="post" class="border border-secondary rounded p-3 needs-validation" novalidate autocomplete="off">
                     <div class="row form-group">
                         <label for="email" class="col-md-2 col-form-label">{{i18n .Lang "contact-us.feedback.form.email"}}</label>
-                        <div class="col-md-10"><input id="email" name="email" type="email" class="form-control" placeholder="name@mail.ru"/></div>
+                        <div class="col-md-10">
+                            <input id="email" name="email" type="text" class="form-control" placeholder="name@mail.ru" required/>
+                            <div class="invalid-tooltip">{{i18n .Lang "contact-us.feedback.form.validation-error.field-required"}}</div>
+                        </div>
                     </div>
                     <div class="form-group row">
                         <label for="message" class="col-md-2 col-form-label">{{i18n .Lang "contact-us.feedback.form.message"}}</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" id="message" name="message" rows="7"></textarea>
+                            <textarea id="message" name="message" class="form-control" rows="7" required></textarea>
+                            <div class="invalid-tooltip">{{i18n .Lang "contact-us.feedback.form.validation-error.field-required"}}</div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="offset-md-2 col-md-10">
-                            <button id="feedbackButton" type="button" class="btn btn-primary">{{i18n .Lang "action.send"}}</button>
+                            <button id="feedbackButton" type="submit" class="btn btn-primary">{{i18n .Lang "action.send"}}</button>
                         </div>
                     </div>
                 </form>
