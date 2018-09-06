@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /action/
+
+Host: https://blockchain-su.herokuapp.com
+Sitemap: https://blockchain-su.herokuapp.com/sitemap.xml

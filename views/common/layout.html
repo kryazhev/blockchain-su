@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-
 <html lang="{{.Lang}}">
-    <head>
-        {{ template "common/header.html" . }}
-        {{ block "head" . }}{{/* default head block */}}{{end}}
-    </head>
-
-    <body>
-        {{ template "common/navbar.html" . }}
-        {{ block "body" . }}{{/* default body block */}}{{end}}
-        {{ template "common/footer.html" . }}
-    </body>
+<head>
+{{ template "common/header.html" . }}
+{{ block "head" . }}{{/* default head block */}}{{end}}
+</head>
+<body>
+{{ template "common/navbar.html" . }}
+{{ block "body" . }}{{/* default body block */}}{{end}}
+{{ template "common/footer.html" . }}
+</body>
 </html>

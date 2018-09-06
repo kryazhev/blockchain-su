@@ -32,7 +32,6 @@ func main() {
 	//beego.AppConfig.Set("sessionConfig", `{"cookieName": "gosessionid", "cclifetime": 3600}`)
 
 	beego.AddFuncMap("i18n", i18n.Tr)
-	beego.AddFuncMap("safeHtml", models.SafeHtml)
 	beego.AddFuncMap("data", models.Data)
 	beego.AddFuncMap("lookupEnv", models.LookupEnv)
 	beego.Run()

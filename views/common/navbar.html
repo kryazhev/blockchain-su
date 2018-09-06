@@ -45,9 +45,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>{{i18n .Lang "translation.dialog.p1" | safeHtml}}</p>
-                <p>{{i18n .Lang "translation.dialog.p2" | safeHtml}}</p>
-                <p>{{i18n .Lang "translation.dialog.p3" | safeHtml}}</p>
+                <p>{{i18n .Lang "translation.dialog.p1" | str2html}}</p>
+                <p>{{i18n .Lang "translation.dialog.p2" | str2html}}</p>
+                <p>{{i18n .Lang "translation.dialog.p3" | str2html}}</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{i18n .Lang "action.close"}}</button>

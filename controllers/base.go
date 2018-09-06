@@ -21,6 +21,11 @@ func (c *AppController) initData(page string) {
 	}
 
 	c.Data["Page"] = page
+
+	c.Data["PageTitle"] = "meta." + page + ".title"
+	c.Data["PageDescription"] = "meta." + page + ".description"
+	c.Data["PageKeywords"] = "meta." + page + ".keywords"
+
 	c.TplName = strings.Replace(page, ".", "/", 1) + ".html"
 }
 
