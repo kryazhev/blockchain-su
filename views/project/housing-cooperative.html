@@ -16,10 +16,7 @@
                         <a class="nav-link" href="#data" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.data"}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#code-tasks" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.code-tasks"}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#common-tasks" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.common-tasks"}}</a>
+                        <a class="nav-link" href="#tasks" role="tab" data-toggle="tab">{{i18n .Lang "project.tabs.tasks"}}</a>
                     </li>
                 </ul>
 
@@ -99,20 +96,7 @@
                         {{end}}
                     </div>
 
-                    <div role="tabpanel" class="tab-pane fade" id="code-tasks">
-                        <ul>
-                            <li>Добавить captcha</li>
-                            <li>Добавить интеграцию с hyperledger.</li>
-                            <li>Добавить механизм голосования.</li>
-                            <li>Добавить интеграцию с платежными системами.</li>
-                            <li>На проде использовать только https.</li>
-                            <li>Разобраться с деплоем приложения в облачной среде.</li>
-                            <li>Проработать механизмы: обновления, резервного копирования и восстановления.</li>
-                            <li>Добавить личный кабинет, возможно настройки.</li>
-                        </ul>
-                    </div>
-
-                    <div role="tabpanel" class="tab-pane fade" id="common-tasks">
+                    <div role="tabpanel" class="tab-pane fade" id="tasks">
                         <ul>
                             <li>Добавить перевод пользовательского интерфейса на другие языки.</li>
                             <li>Проработать проект на соотвествие законов РФ: регистрация кооператива, устав, открытие счетов, налоговая.</li>
@@ -122,7 +106,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 {{ end }}
