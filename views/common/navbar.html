@@ -58,7 +58,7 @@
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-secondary">
     <div class="container">
-        <a class="navbar-brand" href="/home.html"><span class="fa fa-home fa-lg"></span> {{i18n .Lang "navigation.home"}}</a>
+        <a class="navbar-brand" href="/home.html" hreflang="{{.Lang}}"><span class="fa fa-home fa-lg"></span> {{i18n .Lang "navigation.home"}}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -66,30 +66,30 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarProjects" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a id="navbarProjects" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="fa fa-project-diagram fa-lg"></span> {{i18n .Lang "navigation.projects"}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarProjects">
-                        <a class="dropdown-item" href="/project/housing-cooperative.html"><span class="fa fa-file-contract fa-lg"></span> {{i18n .Lang "project.housing-cooperative"}}</a>
-                        <a class="dropdown-item" href="/project/ussr-2.0.html"><span class="fa fa-dove fa-lg"></span> {{i18n .Lang "project.ussr-2.0"}}</a>
-                        <a class="dropdown-item" href="/project/pension-fund.html"><span class="fa fa-blind fa-lg"></span> {{i18n .Lang "project.pension-fund"}}</a>
-                        <a class="dropdown-item" href="/project/municipal-services.html"><span class="fa fa-clipboard-list fa-lg"></span> {{i18n .Lang "project.municipal-services"}}</a>
-                        <a class="dropdown-item" href="/project/bank.html"><span class="fa fa-piggy-bank fa-lg"></span> {{i18n .Lang "project.bank"}}</a>
+                        <a class="dropdown-item" href="/project/housing-cooperative.html" hreflang="{{.Lang}}"><span class="fa fa-file-contract fa-lg"></span> {{i18n .Lang "project.housing-cooperative"}}</a>
+                        <a class="dropdown-item" href="/project/ussr-2.0.html" hreflang="{{.Lang}}"><span class="fa fa-dove fa-lg"></span> {{i18n .Lang "project.ussr-2.0"}}</a>
+                        <a class="dropdown-item" href="/project/pension-fund.html" hreflang="{{.Lang}}"><span class="fa fa-blind fa-lg"></span> {{i18n .Lang "project.pension-fund"}}</a>
+                        <a class="dropdown-item" href="/project/municipal-services.html" hreflang="{{.Lang}}"><span class="fa fa-clipboard-list fa-lg"></span> {{i18n .Lang "project.municipal-services"}}</a>
+                        <a class="dropdown-item" href="/project/bank.html" hreflang="{{.Lang}}"><span class="fa fa-piggy-bank fa-lg"></span> {{i18n .Lang "project.bank"}}</a>
                     </div>
                 </li>
                 <li class="nav-item{{if eq .Page "about-us"}} active{{end}}">
-                    <a class="nav-link" href="/about-us.html"><span class="fa fa-address-card fa-lg"></span> {{i18n .Lang "navigation.about-us"}}</a>
+                    <a class="nav-link" href="/about-us.html" hreflang="{{.Lang}}"><span class="fa fa-address-card fa-lg"></span> {{i18n .Lang "navigation.about-us"}}</a>
                 </li>
                 <li class="nav-item{{if eq .Page "contact-us"}} active{{end}}">
-                    <a class="nav-link" href="/contact-us.html"><span class="fa fa-seedling fa-lg"></span> {{i18n .Lang "navigation.contact-us"}}</a>
+                    <a class="nav-link" href="/contact-us.html" hreflang="{{.Lang}}"><span class="fa fa-seedling fa-lg"></span> {{i18n .Lang "navigation.contact-us"}}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="fa fa-toolbox fa-lg"></span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/action/header" target="_blank">Request Header</a>
-                        <a class="dropdown-item" href="/action/sessions" target="_blank">Sessions</a>
+                        <a class="dropdown-item" href="/action/header" hreflang="{{.Lang}}" target="_blank">Request Header</a>
+                        <a class="dropdown-item" href="/action/sessions" hreflang="{{.Lang}}" target="_blank">Sessions</a>
                     </div>
                 </li>
             </ul>
@@ -99,8 +99,8 @@
                         <span class="flag-icon flag-icon-{{.Country}}"></span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarLanguages">
-                        <a class="dropdown-item" href="/action/change-language?lang=ru&page={{.Page}}"><span class="flag-icon flag-icon-ru"></span> Pусский язык</a>
-                        <a class="dropdown-item" href="/action/change-language?lang=en&page={{.Page}}"><span class="flag-icon flag-icon-us"></span> English</a>
+                        <a class="dropdown-item" href="/action/change-language?lang=ru&page={{.Page}}" hreflang="{{.Lang}}"><span class="flag-icon flag-icon-ru"></span> Pусский язык</a>
+                        <a class="dropdown-item" href="/action/change-language?lang=en&page={{.Page}}" hreflang="{{.Lang}}"><span class="flag-icon flag-icon-us"></span> English</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-az"></span> Azərbaycan dili</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-am"></span> Հայերենի լեզուն</a>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#langModal"><span class="flag-icon flag-icon-by"></span> Беларускую мову</a>
@@ -130,12 +130,12 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#" data-toggle="popover" data-placement="right" data-content="{{i18n .Lang "not-implemented-yet"}}"><span class="fa fa-cogs fa-lg"></span> {{i18n .Lang "navigation.settings"}}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/action/logout?page={{.Page}}"><span class="fa fa-sign-out-alt fa-lg"></span> {{i18n .Lang "action.logout"}}</a>
+                            <a class="dropdown-item" href="/action/logout?page={{.Page}}" hreflang="{{.Lang}}"><span class="fa fa-sign-out-alt fa-lg"></span> {{i18n .Lang "action.logout"}}</a>
                         </div>
                     </li>
                 {{ else }}
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in-alt fa-lg"></span> {{i18n .Lang "action.login"}}</a>
+                        <a class="nav-link" href="#"  hreflang="{{.Lang}}" data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in-alt fa-lg"></span> {{i18n .Lang "action.login"}}</a>
                     </li>
                 {{end}}
             </ul>
