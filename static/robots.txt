@@ -1,4 +1,5 @@
 User-agent: *
+Crawl-delay: 10
 Disallow: /action/
 
 Host: https://blockchain-su.herokuapp.com
