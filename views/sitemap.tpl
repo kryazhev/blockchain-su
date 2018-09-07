@@ -23,7 +23,7 @@
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/about-us.html?lang=en" />
     </url>
     <url>
-        <loc>https://blockchain-su.herokuapp.com?lang=en</loc>
+        <loc>https://blockchain-su.herokuapp.com/about-us.html?lang=en</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/about-us.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/about-us.html?lang=en" />
     </url>
@@ -34,63 +34,63 @@
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/contact-us.html?lang=en" />
     </url>
     <url>
-        <loc>https://blockchain-su.herokuapp.com?lang=en</loc>
+        <loc>https://blockchain-su.herokuapp.com/contact-us.html?lang=en</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/contact-us.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/contact-us.html?lang=en" />
     </url>
 {{/* Projects */}}
 {{/* project/housing-cooperative */}}
     <url>
-        <loc>https://blockchain-su.herokuapp.com/contact-us.html?lang=ru</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/housing-cooperative.html?lang=ru</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/housing-cooperative.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/housing-cooperative.html?lang=en" />
     </url>
     <url>
-        <loc>https://blockchain-su.herokuapp.com?lang=en</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/housing-cooperative.html?lang=en</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/housing-cooperative.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/housing-cooperative.html?lang=en" />
     </url>
 {{/* project/ussr-2.0 */}}
     <url>
-        <loc>https://blockchain-su.herokuapp.com/contact-us.html?lang=ru</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/ussr-2.0.html?lang=ru</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/ussr-2.0.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/ussr-2.0.html?lang=en" />
     </url>
     <url>
-        <loc>https://blockchain-su.herokuapp.com?lang=en</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/ussr-2.0.html?lang=en</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/ussr-2.0.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/ussr-2.0.html?lang=en" />
     </url>
 {{/* project/pension-fund */}}
     <url>
-        <loc>https://blockchain-su.herokuapp.com/contact-us.html?lang=ru</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/pension-fund.html?lang=ru</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/pension-fund.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/pension-fund.html?lang=en" />
     </url>
     <url>
-        <loc>https://blockchain-su.herokuapp.com?lang=en</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/pension-fund.html?lang=en</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/pension-fund.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/pension-fund.html?lang=en" />
     </url>
 {{/* project/municipal-services */}}
     <url>
-        <loc>https://blockchain-su.herokuapp.com/contact-us.html?lang=ru</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/municipal-services.html?lang=ru</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/municipal-services.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/municipal-services.html?lang=en" />
     </url>
     <url>
-        <loc>https://blockchain-su.herokuapp.com?lang=en</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/municipal-services.html?lang=en</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/municipal-services.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/municipal-services.html?lang=en" />
     </url>
 {{/* project/municipal-services */}}
     <url>
-        <loc>https://blockchain-su.herokuapp.com/contact-us.html?lang=ru</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/bank.html?lang=ru</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/bank.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/bank.html?lang=en" />
     </url>
     <url>
-        <loc>https://blockchain-su.herokuapp.com?lang=en</loc>
+        <loc>https://blockchain-su.herokuapp.com/project/bank.html?lang=en</loc>
         <xhtml:link rel="alternate" hreflang="ru-ru" href="https://blockchain-su.herokuapp.com/project/bank.html?lang=ru" />
         <xhtml:link rel="alternate" hreflang="en-us" href="https://blockchain-su.herokuapp.com/project/bank.html?lang=en" />
     </url>
