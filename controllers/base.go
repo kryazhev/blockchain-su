@@ -57,11 +57,21 @@ func (c *AppController) Prepare() {
 		c.Data["User"] = user
 	}
 
-	if c.Data["Lang"] == nil {
-		lang := c.Ctx.GetCookie("lang")
-		if len(lang) == 0 {
-			lang = "ru"
-		}
-		c.Data["Lang"] = lang
+	lang := c.GetString("lang", "")
+	if len(lang) == 0 {
+		lang = c.Ctx.GetCookie("lang")
+	} else {
+		c.Ctx.SetCookie("lang", lang)
 	}
+	if !models.HasElem(languages, lang) {
+		lang = "ru"
+	}
+	c.Data["Lang"] = lang
+
+	if lang == "en" {
+		c.Data["Country"] = "us"
+	} else {
+		c.Data["Country"] = lang
+	}
+
 }

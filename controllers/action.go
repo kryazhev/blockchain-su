@@ -11,7 +11,7 @@ var languages = []string{
 	"ru", "az", "am", "by", "ge",
 	"kz", "kg", "lv", "lt", "md",
 	"tj", "tm", "ua", "uz", "ee",
-	"us"}
+	"en"}
 
 /* OAuth 2.0 */
 func (c *AppController) Callback() {
@@ -48,13 +48,6 @@ func (c *AppController) Logout() {
 
 /* Common */
 func (c *AppController) ChangeLanguage() {
-	lang := c.GetString("lang", "ru")
-	if !models.HasElem(languages, lang) {
-		lang = "ru"
-	}
-	c.Ctx.SetCookie("lang", lang)
-	c.Data["Lang"] = lang
-
 	page := c.GetString("page")
 	c.initData(page)
 }
