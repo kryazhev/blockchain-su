@@ -39,3 +39,4 @@
 
 [metadata.heroku]
   root-package = "github.com/kryazhev/blockchain-su"
+  go-version = "go1.10.2"
